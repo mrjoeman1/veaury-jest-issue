@@ -1,14 +1,13 @@
 # test-veaury
 
-This template should help get you started developing with Vue 3 in Vite.
+Reproducing of the issue with Jest tests + Veaury when Vue component is wrapped by React component.
+It causes the following error:
 
-## Recommended IDE Setup
+`Error: Uncaught [RangeError: Maximum call stack size exceeded]`
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+In this example in `src/components/Page2.vue` `<SimpleComponent/>` (Vue component) is wrapped by `<Box/>` component (React component). It causes the error.
 
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+Folder `src/components/carbon` contains React components wrapped by Veaury.
 
 ## Project Setup
 
@@ -16,14 +15,10 @@ See [Vite Configuration Reference](https://vitejs.dev/config/).
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+### How to run the test to reproduce the bug
+Run 'test1' in src/test1.test.js
 
-```sh
-npm run dev
-```
+### Additional notes
+You can try to change `src/components/Page2.vue` so that `<SimpleComponent/>` should be outside of the `<Box>` tag, in this case the test will run successfully.
 
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+# veaury-jest-issue
