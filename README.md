@@ -1,7 +1,7 @@
 # test-veaury
 
-Reproducing of the issue with Jest tests + Veaury when Vue component is wrapped by React component.
-It causes the following error:
+Reproduction of the issue with Jest tests + Veaury when Vue component is wrapped by React component.
+Causes the following error:
 
 `Error: Uncaught [RangeError: Maximum call stack size exceeded]`
 
